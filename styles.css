@@ -645,3 +645,114 @@ img {
 .logo, .footer-logo {
     min-height: 40px; 
 }
+
+.logo-carousel {
+    background-color: #000;
+    padding: 2rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: calc(240px * 16); 
+}
+
+.logo-item {
+    flex: 0 0 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+.logo-item img {
+    max-width: 120px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%) brightness(1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-240px * 8)); 
+    }
+}
+
+
+.logo-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .logo-item {
+        flex: 0 0 180px;
+        padding: 0.5rem;
+    }
+    
+    .logo-item img {
+        max-width: 90px;
+        max-height: 45px;
+    }
+    
+    .carousel-track {
+        width: calc(180px * 16);
+        animation-duration: 25s;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-180px * 8));
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-carousel {
+        padding: 1.5rem 0;
+    }
+    
+    .logo-item {
+        flex: 0 0 150px;
+    }
+    
+    .logo-item img {
+        max-width: 75px;
+        max-height: 38px;
+    }
+    
+    .carousel-track {
+        width: calc(150px * 16);
+        animation-duration: 20s;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 8));
+        }
+    }
+}
