@@ -94,6 +94,25 @@ header .container {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+    min-height: 60px; 
+}
+
+.header-left, .header-right {
+    flex: 1;
+    display: flex;
+}
+
+.header-left {
+    justify-content: flex-start;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+.logo {
+    flex: 0 0 auto; 
+    margin: 0 20px; 
 }
 
 .logo h1 {
@@ -565,6 +584,20 @@ footer {
     .hero-slider {
         height: 400px;
     }
+
+    .logo img {
+        height: 32px; 
+        max-width: 100px;
+    }
+    
+    header .container {
+        padding: 0.75rem 15px;
+        min-height: 50px;
+    }
+    
+    .logo {
+        margin: 0 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -579,4 +612,17 @@ footer {
     .hero-slider {
         height: 300px;
     }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto; 
+    max-width: 120px;
+    object-fit: contain; 
 }
