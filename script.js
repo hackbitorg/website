@@ -231,6 +231,8 @@ function applyDiscounts() {
     
     const productDiscounts = {
         'NodeMcu ESP8266 USB Type-C': { original: '৳600', discounted: '৳499', percent: '17%' },
+        'EMU8086 - MICROPROCESSOR EMULATOR': { original: '৳2344', discounted: '৳0', percent: '100%' },
+
 
     };
     
