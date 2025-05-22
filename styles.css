@@ -622,7 +622,26 @@ footer {
 
 .logo img {
     height: 40px;
-    width: auto; 
+    width: auto;
     max-width: 120px;
-    object-fit: contain; 
+    object-fit: contain;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+img {
+    loading: lazy; 
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+}
+
+.logo, .footer-logo {
+    min-height: 40px; 
 }
