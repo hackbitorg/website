@@ -228,17 +228,15 @@ function initSloganAnimation() {
 function applyDiscounts() {
     const products = document.querySelectorAll('.product');
     
-    
     const productDiscounts = {
         'NodeMcu ESP8266 USB Type-C': { original: '৳600', discounted: '৳499', percent: '17%' },
         'EMU8086 - MICROPROCESSOR EMULATOR': { original: '৳2344', discounted: '৳0', percent: '100%' },
-
-
     };
     
     products.forEach(product => {
-        const title = product.querySelector('h3').textContent;
+        const title = product.querySelector('h3').textContent.trim();
         const priceElement = product.querySelector('.price');
+        
         
         if (productDiscounts[title]) {
             
@@ -251,15 +249,15 @@ function applyDiscounts() {
             const priceContainer = document.createElement('div');
             priceContainer.className = 'price-container';
             
-            
+           
             const originalPrice = document.createElement('span');
             originalPrice.className = 'original-price';
             originalPrice.textContent = productDiscounts[title].original;
             
-            
+
             priceElement.textContent = productDiscounts[title].discounted;
             
-            
+
             priceElement.parentNode.insertBefore(priceContainer, priceElement);
             priceContainer.appendChild(originalPrice);
             priceContainer.appendChild(priceElement);
