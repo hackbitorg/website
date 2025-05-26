@@ -1,11 +1,13 @@
 :root {
-    --primary-color: #c00;
-    --secondary-color: #800;
-    --accent-color: #ff3333;
-    --dark-color: #000; 
-    --light-color: #f4f4f4;
-    --success-color: #5cb85c;
-    --warning-color: #f0ad4e;
+    --primary-color: #c00;        
+    --secondary-color: #800;      
+    --accent-color: #10B981;         
+    --dark-color: #1F2937;           
+    --light-color: #FFFFFF;          
+    --success-color: #059669;        
+    --warning-color: #F59E0B;        
+    --border-color: #E5E7EB;         
+    --text-gray: #6B7280;            
     --max-width: 1200px;
 }
 
@@ -18,8 +20,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #fff; 
-    background-color: #000; 
+    color: #FFFFFF;                  
+    background-color: #000;       
 }
 
 .container {
@@ -42,13 +44,14 @@ img {
 }
 
 .section-title {
-    color: #fff;
+    color: #FFFFFF;        
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 1rem;
 }
+
 
 .section-title::after {
     content: '';
@@ -58,35 +61,37 @@ img {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 .btn {
     display: inline-block;
-    background: var(--primary-color);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #FFFFFF;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
 }
 
 .btn:hover {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(204, 0, 0, 0.3);
 }
 
 
 header {
-    background-color: #000; 
+    background-color: #000000;       
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 header .container {
@@ -149,14 +154,21 @@ nav ul li a:hover {
 }
 
 .order-btn {
-    background-color: var(--primary-color);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #FFFFFF;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
 }
 
 .order-btn:hover {
-    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(204, 0, 0, 0.3);
 }
 
 .mobile-menu {
@@ -202,7 +214,7 @@ nav ul li a:hover {
 .discount-text {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #4caf50;
+    color: #0bed43cb;
 }
 
 .discount-btn {
@@ -324,7 +336,7 @@ nav ul li a:hover {
 
 .featured {
     padding: 4rem 0;
-    background-color: #000; 
+    background-color: #000;       
 }
 
 .products-grid {
@@ -334,19 +346,21 @@ nav ul li a:hover {
 }
 
 .product {
-    background-color: #111;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #111;       
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
+    border: 1px solid #222;
 }
 
 .product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(204, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
 }
 
 .product-image {
@@ -360,20 +374,20 @@ nav ul li a:hover {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #2e7d32; 
+    background: linear-gradient(135deg, var(--accent-color), #059669);
     color: white;
     font-weight: bold;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transform: rotate(5deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
     z-index: 1;
 }
 
 .product h3 {
     font-size: 1.5rem;
     margin: 1rem;
-    color: #fff;
+    color: #FFFFFF;        
 }
 
 .price-container {
@@ -386,18 +400,18 @@ nav ul li a:hover {
 .original-price {
     font-size: 1rem;
     text-decoration: line-through;
-    color: #999;
+    color: #999999;
 }
 
 .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #4caf50;
+    color: var(--accent-color);      
 }
 
 .description {
     margin: 1rem;
-    color: #ccc;
+    color: #CCCCCC;         
     flex-grow: 1;
 }
 
@@ -405,32 +419,31 @@ nav ul li a:hover {
     margin: 1rem;
     display: block;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    border-radius: 25px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 6px;
     padding: 12px 24px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.25);
+    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
+    color: #FFFFFF;
 }
 
 .product .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.4);
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
-
 
 .products {
     padding: 4rem 0;
-    background-color: #000; 
+    background-color: #000;      
 }
-
 
 .about {
     padding: 4rem 0;
-    background-color: #111; 
+    background-color: #111;       
 }
 
 .about .container {
@@ -443,7 +456,7 @@ nav ul li a:hover {
 .about-content p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
-    color: #ccc; 
+    color: #CCCCCC;         
 }
 
 .about-image {
@@ -457,28 +470,29 @@ nav ul li a:hover {
 
 .order {
     padding: 4rem 0;
-    background-color: #000; 
+    background-color: #000;       
 }
 
 .order-desc {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
-    color: #ccc; 
+    color: #CCCCCC;
 }
 
 .form-container {
-    background-color: #111; 
+    background-color: #111;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #222;
 }
-
 
 footer {
     background-color: #111; 
-    color: #fff;
+    color: #FFFFFF;
     padding: 3rem 0 0;
+    border-top: 3px solid var(--primary-color);
 }
 
 .footer-content {
@@ -510,17 +524,17 @@ footer {
 }
 
 .footer-links ul li a {
-    color: #ccc;
+    color: #D1D5DB;                  
     transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);      
 }
 
 .footer-contact p {
     margin-bottom: 0.5rem;
-    color: #ccc;
+    color: #D1D5DB;
 }
 
 .social-icons {
@@ -542,7 +556,7 @@ footer {
 .copyright {
     text-align: center;
     padding: 1.5rem 0;
-    color: #ccc;
+    color: #9CA3AF;
     font-size: 0.9rem;
 }
 
@@ -647,7 +661,7 @@ img {
 }
 
 .logo-carousel {
-    background-color: #000;
+    background-color: #000;       
     padding: 2rem 0;
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -786,14 +800,15 @@ img {
 }
 
 .product .btn.disabled {
-    background-color: #666;
+    background: #9CA3AF;
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.6;
+    box-shadow: none;
 }
 
 .product .btn.disabled:hover {
-    background-color: #666;
+    background: #9CA3AF;
     transform: none;
     box-shadow: none;
 }
