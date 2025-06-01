@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #c00;        
-    --secondary-color: #800;      
+    --primary-color: #6B46C1;        
+    --secondary-color: #553C9A;      
     --accent-color: #10B981;         
     --dark-color: #1F2937;           
     --light-color: #FFFFFF;          
@@ -20,8 +20,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #FFFFFF;                  
-    background-color: #000;       
+    color: #1F2937;                  
+    background-color: #FFFFFF;       
 }
 
 .container {
@@ -44,7 +44,7 @@ img {
 }
 
 .section-title {
-    color: #FFFFFF;        
+    color: var(--dark-color);        
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -76,13 +76,13 @@ img {
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(107, 70, 193, 0.2);
 }
 
 .btn:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(204, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(107, 70, 193, 0.3);
 }
 
 
@@ -91,7 +91,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    border-bottom: 2px solid var(--primary-color); 
 }
 
 header .container {
@@ -162,13 +162,13 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(107, 70, 193, 0.2);
 }
 
 .order-btn:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(204, 0, 0, 0.3);
+    box-shadow: 0 3px 8px rgba(107, 70, 193, 0.3);
 }
 
 .mobile-menu {
@@ -183,8 +183,10 @@ nav ul li a:hover {
     position: relative;
     overflow: hidden;
     height: 60px;
-    background-color: #111;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+    border-bottom: 2px solid #00ff41;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .slogan-content {
@@ -199,10 +201,12 @@ nav ul li a:hover {
 
 .slogan-text {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     transition: opacity 0.3s ease;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .slogan-discount {
@@ -336,7 +340,7 @@ nav ul li a:hover {
 
 .featured {
     padding: 4rem 0;
-    background-color: #000;       
+    background-color: #F9FAFB;       
 }
 
 .products-grid {
@@ -346,7 +350,7 @@ nav ul li a:hover {
 }
 
 .product {
-    background-color: #111;       
+    background-color: #FFFFFF;       
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -354,12 +358,12 @@ nav ul li a:hover {
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
 }
 
 .product:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(204, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(107, 70, 193, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-color);
 }
 
@@ -387,7 +391,7 @@ nav ul li a:hover {
 .product h3 {
     font-size: 1.5rem;
     margin: 1rem;
-    color: #FFFFFF;        
+    color: var(--dark-color);        
 }
 
 .price-container {
@@ -400,7 +404,7 @@ nav ul li a:hover {
 .original-price {
     font-size: 1rem;
     text-decoration: line-through;
-    color: #999999;
+    color: var(--text-gray);
 }
 
 .price {
@@ -411,7 +415,7 @@ nav ul li a:hover {
 
 .description {
     margin: 1rem;
-    color: #CCCCCC;         
+    color: var(--text-gray);         
     flex-grow: 1;
 }
 
@@ -426,7 +430,7 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(107, 70, 193, 0.2);
     color: #FFFFFF;
 }
 
@@ -438,12 +442,12 @@ nav ul li a:hover {
 
 .products {
     padding: 4rem 0;
-    background-color: #000;      
+    background-color: #FFFFFF;      
 }
 
 .about {
     padding: 4rem 0;
-    background-color: #111;       
+    background-color: #F9FAFB;       
 }
 
 .about .container {
@@ -456,7 +460,7 @@ nav ul li a:hover {
 .about-content p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
-    color: #CCCCCC;         
+    color: var(--text-gray);         
 }
 
 .about-image {
@@ -470,26 +474,26 @@ nav ul li a:hover {
 
 .order {
     padding: 4rem 0;
-    background-color: #000;       
+    background-color: #FFFFFF;       
 }
 
 .order-desc {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
-    color: #CCCCCC;
+    color: var(--text-gray);
 }
 
 .form-container {
-    background-color: #111;
+    background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
 }
 
 footer {
-    background-color: #111; 
+    background-color: var(--dark-color); 
     color: #FFFFFF;
     padding: 3rem 0 0;
     border-top: 3px solid var(--primary-color);
@@ -661,11 +665,11 @@ img {
 }
 
 .logo-carousel {
-    background-color: #000;       
+    background-color: #F9FAFB;       
     padding: 2rem 0;
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .carousel-track {
