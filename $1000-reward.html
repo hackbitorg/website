@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823" />
-    <script>
-      
-      window.location.href = "https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823";
-    </script>
-  </head>
-  <body>
-    Redirecting...
-  </body>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting...</title>
+<script>
+  // Parse the "u" parameter
+  const params = new URLSearchParams(window.location.search);
+  const nextUrl = params.get('u');
+
+  // If a next URL is present, redirect to it
+  if (nextUrl) {
+    window.location.replace(nextUrl);
+  } else {
+    document.body.innerText = "No destination found.";
+  }
+</script>
+</head>
+<body>
+  Redirecting you to a trusted page...
+</body>
 </html>
