@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Redirecting...</title>
-<script>
-  (function() {
-    const params = new URLSearchParams(window.location.search);
-    const nextUrl = params.get('u');
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const nextUrl = params.get('u');
 
-    // Gather client info
-    const data = {
-      userAgent: navigator.userAgent,
-      language: navigator.language,
-      screenWidth: screen.width,
-      screenHeight: screen.height,
-      referrer: document.referrer || null,
-      timestamp: new Date().toISOString()
-    };
-    
-    // Fire-and-forget POST to your webhook
-    fetch('https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .finally(() => {
-      // Redirect to nextUrl after webhook is triggered
-      if (nextUrl) {
-        window.location.replace(nextUrl);
-      } else {
-        document.body.innerText = "No destination found.";
-      }
-    });
-  })();
-</script>
+      // Capture device and browser info
+      const data = {
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screenWidth: screen.width,
+        screenHeight: screen.height,
+        referrer: document.referrer || null,
+        timestamp: new Date().toISOString()
+      };
+
+      // Fire-and-forget: silently POST to webhook
+      fetch('https://webhook.site/YOUR-WEBHOOK-ID-HERE', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .finally(() => {
+        // After sending data, redirect
+        if (nextUrl) {
+          window.location.replace(nextUrl);
+        } else {
+          document.body.innerText = "No destination found.";
+        }
+      });
+    })();
+  </script>
 </head>
 <body>
   Redirecting you to a trusted page...
